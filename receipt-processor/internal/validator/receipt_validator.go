@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"receipt-processor/internal/model"
+	"strconv"
 	"time"
 )
 
@@ -29,7 +30,11 @@ func ValidateReceipt(receipt model.Receipt) error {
 		return errors.New("invalid purchaseTime format, expected HH:MM")
 	}
 
-	if receipt.Total <= 0 {
+	total, err := strconv.ParseFloat(receipt.Total, 64)
+	if err != nil {
+		return errors.New("invalid total: must be a numeric value")
+	}
+	if total <= 0 {
 		return errors.New("total must be greater than zero")
 	}
 
@@ -38,7 +43,12 @@ func ValidateReceipt(receipt model.Receipt) error {
 			return fmt.Errorf("shortDescription is required for item %d", i+1)
 		}
 
-		if item.Price <= 0 {
+		price, err := strconv.ParseFloat(item.Price, 64)
+		if err != nil {
+			return fmt.Errorf("invalid price for item %d: must be a numeric value", i+1)
+		}
+
+		if price <= 0 {
 			return fmt.Errorf("price must be greater than zero for item %d", i+1)
 		}
 	}

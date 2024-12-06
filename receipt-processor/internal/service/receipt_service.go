@@ -6,6 +6,7 @@ import (
 	"receipt-processor/internal/model"
 	"receipt-processor/internal/store"
 	"receipt-processor/internal/utils"
+	"strconv"
 	"strings"
 	"time"
 
@@ -66,15 +67,20 @@ func CalculatePoints(receipt model.Receipt) (int, error) {
 		}
 	}
 
-	if receipt.Total <= 0 {
+	totalFloat, err := strconv.ParseFloat(receipt.Total, 64)
+	if err != nil {
+		fmt.Println("Error converting total to float:", err)
+	}
+
+	if totalFloat <= 0 {
 		return 0, fmt.Errorf("invalid total amount: must be positive")
 	}
 
-	if receipt.Total == float64(int(receipt.Total)) {
+	if totalFloat == float64(int(totalFloat)) {
 		points += 50
 	}
 
-	if math.Mod(receipt.Total, 0.25) == 0 {
+	if math.Mod(totalFloat, 0.25) == 0 {
 		points += 25
 	}
 
@@ -94,7 +100,14 @@ func CalculatePoints(receipt model.Receipt) (int, error) {
 	for _, item := range receipt.Items {
 		description := strings.TrimSpace(item.ShortDesc)
 		if len(description)%3 == 0 {
-			points += int(math.Ceil(item.Price * 0.2))
+
+			itemPrice, err := strconv.ParseFloat(item.Price, 64)
+			if err != nil {
+				fmt.Printf("Error parsing price for item %s: %v\n", description, err)
+				continue
+			}
+
+			points += int(math.Ceil(itemPrice * 0.2))
 		}
 	}
 
