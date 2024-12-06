@@ -18,7 +18,7 @@ func ProcessReceipt(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&requestPayload); err != nil {
 		utils.Logger.Error("Invalid JSON format", zap.Error(err))
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON format"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
