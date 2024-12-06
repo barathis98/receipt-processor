@@ -16,14 +16,14 @@ func ProcessReceipt(c *gin.Context) {
 
 	var requestPayload model.Receipt
 
-	if err := validator.ValidateReceipt(requestPayload); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-
 	if err := c.ShouldBindJSON(&requestPayload); err != nil {
 		utils.Logger.Error("Invalid JSON format", zap.Error(err))
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON format"})
+		return
+	}
+
+	if err := validator.ValidateReceipt(requestPayload); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 

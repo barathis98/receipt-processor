@@ -6,21 +6,18 @@ import (
 )
 
 type PointsStore struct {
-	data sync.Map // Thread-safe map for storing receipt points
+	data sync.Map
 }
 
-// Initialize a new PointsStore
 func NewPointsStore() *PointsStore {
 	return &PointsStore{}
 }
 
-// Add points for a receipt ID with error handling
 func (s *PointsStore) Add(id string, points int) error {
 	if id == "" {
 		return fmt.Errorf("ID cannot be empty")
 	}
 
-	// Ensure points is not negative (optional validation)
 	if points < 0 {
 		return fmt.Errorf("points cannot be negative")
 	}
@@ -29,7 +26,6 @@ func (s *PointsStore) Add(id string, points int) error {
 	return nil
 }
 
-// Get points for a receipt ID with error handling
 func (s *PointsStore) Get(id string) (int, error) {
 	if id == "" {
 		return 0, fmt.Errorf("ID cannot be empty")
@@ -48,18 +44,15 @@ func (s *PointsStore) Get(id string) (int, error) {
 	return points, nil
 }
 
-// Update points for a receipt ID with error handling
 func (s *PointsStore) Update(id string, points int) error {
 	if id == "" {
 		return fmt.Errorf("ID cannot be empty")
 	}
 
-	// Ensure points is not negative (optional validation)
 	if points < 0 {
 		return fmt.Errorf("points cannot be negative")
 	}
 
-	// Check if the points exist before updating (optional)
 	_, exists := s.data.Load(id)
 	if !exists {
 		return fmt.Errorf("points for receipt ID %s not found, cannot update", id)
@@ -69,7 +62,6 @@ func (s *PointsStore) Update(id string, points int) error {
 	return nil
 }
 
-// Delete points for a receipt ID with error handling
 func (s *PointsStore) Delete(id string) error {
 	if id == "" {
 		return fmt.Errorf("ID cannot be empty")
@@ -84,7 +76,6 @@ func (s *PointsStore) Delete(id string) error {
 	return nil
 }
 
-// List all receipt IDs and points with error handling
 func (s *PointsStore) List() (map[string]int, error) {
 	pointsMap := make(map[string]int)
 	s.data.Range(func(key, value interface{}) bool {
@@ -96,7 +87,6 @@ func (s *PointsStore) List() (map[string]int, error) {
 		return true
 	})
 
-	// If the points map is empty, return an error
 	if len(pointsMap) == 0 {
 		return nil, fmt.Errorf("no points found in the store")
 	}

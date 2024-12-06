@@ -14,7 +14,6 @@ func NewReceiptStore() *ReceiptStore {
 	return &ReceiptStore{}
 }
 
-// Add adds a receipt to the store with error handling.
 func (s *ReceiptStore) Add(receipt *model.Receipt) error {
 	if receipt == nil {
 		return fmt.Errorf("receipt cannot be nil")
@@ -23,7 +22,6 @@ func (s *ReceiptStore) Add(receipt *model.Receipt) error {
 	return nil
 }
 
-// Get retrieves a receipt by its ID with error handling.
 func (s *ReceiptStore) Get(id string) (*model.Receipt, error) {
 	if id == "" {
 		return nil, fmt.Errorf("ID cannot be empty")
@@ -42,7 +40,6 @@ func (s *ReceiptStore) Get(id string) (*model.Receipt, error) {
 	return receipt, nil
 }
 
-// Delete removes a receipt from the store with error handling.
 func (s *ReceiptStore) Delete(id string) error {
 	if id == "" {
 		return fmt.Errorf("ID cannot be empty")

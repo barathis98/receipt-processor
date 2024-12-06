@@ -190,3 +190,49 @@ APP_LOG: 2024/12/05 22:14:20 logger.go:55: Logger initialized successfully
 {"level":"info","ts":"2024-12-05T22:14:20-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
 {"level":"info","ts":"2024-12-05T22:14:20-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
 {"level":"info","ts":"2024-12-05T22:14:20-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+APP_LOG: 2024/12/05 22:19:54 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T22:19:54-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T22:19:54-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T22:19:54-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+{"level":"info","ts":"2024-12-05T22:20:04-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:20:09-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:20:17-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:14-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:22-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:22-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:23-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:32-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:33-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:33-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+APP_LOG: 2024/12/05 22:21:42 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T22:21:42-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T22:21:42-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T22:21:42-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+{"level":"info","ts":"2024-12-05T22:21:46-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T22:21:47-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+APP_LOG: 2024/12/05 23:09:52 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T23:09:52-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T23:09:52-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T23:09:52-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+{"level":"info","ts":"2024-12-05T23:09:55-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+APP_LOG: 2024/12/05 23:10:48 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T23:10:48-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T23:10:48-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T23:10:48-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+APP_LOG: 2024/12/05 23:11:04 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T23:11:04-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T23:11:04-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T23:11:04-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+{"level":"info","ts":"2024-12-05T23:11:06-05:00","caller":"controller/receipt_controller.go:14","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T23:11:06-05:00","caller":"service/receipt_service.go:40","msg":"Receipt saved successfully","receipt_id":"0b3703a6-1730-4a1e-a31c-27e95123546c"}
+{"level":"info","ts":"2024-12-05T23:11:06-05:00","caller":"controller/receipt_controller.go:36","msg":"Receipt processed successfully","receipt_id":"0b3703a6-1730-4a1e-a31c-27e95123546c"}
+APP_LOG: 2024/12/05 23:11:30 logger.go:47: Logger initialized successfully
+{"level":"info","ts":"2024-12-05T23:11:30-05:00","caller":"server/server.go:33","msg":"Port configured from environment variable","port":8080}
+{"level":"info","ts":"2024-12-05T23:11:30-05:00","caller":"server/server.go:41","msg":"Stores initialized"}
+{"level":"info","ts":"2024-12-05T23:11:30-05:00","caller":"server/server.go:51","msg":"Server started","address":":8080"}
+{"level":"info","ts":"2024-12-05T23:11:32-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T23:11:32-05:00","caller":"service/receipt_service.go:40","msg":"Receipt saved successfully","receipt_id":"4b090e58-68dc-47dc-843c-e4d678ce3849"}
+{"level":"info","ts":"2024-12-05T23:11:32-05:00","caller":"controller/receipt_controller.go:37","msg":"Receipt processed successfully","receipt_id":"4b090e58-68dc-47dc-843c-e4d678ce3849"}
+{"level":"info","ts":"2024-12-05T23:11:41-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"info","ts":"2024-12-05T23:11:48-05:00","caller":"controller/receipt_controller.go:15","msg":"Processing receipt request","method":"POST","url":"/receipts/process"}
+{"level":"error","ts":"2024-12-05T23:11:48-05:00","caller":"controller/receipt_controller.go:20","msg":"Invalid JSON format","error":"json: cannot unmarshal number into Go struct field .retailer of type string","stacktrace":"receipt-processor/internal/controller.ProcessReceipt\n\t/Users/barathisridhar/GitHub/receipt-processor/receipt-processor/internal/controller/receipt_controller.go:20\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185\ngithub.com/gin-gonic/gin.CustomRecoveryWithWriter.func1\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185\ngithub.com/gin-gonic/gin.LoggerWithConfig.func1\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/barathisridhar/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.22.4/libexec/src/net/http/server.go:3137\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.22.4/libexec/src/net/http/server.go:2039"}
