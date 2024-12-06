@@ -5,6 +5,7 @@ import (
 	"receipt-processor/internal/model"
 	"receipt-processor/internal/service"
 	"receipt-processor/internal/utils"
+	"receipt-processor/internal/validator"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -14,6 +15,11 @@ func ProcessReceipt(c *gin.Context) {
 	utils.Logger.Info("Processing receipt request", zap.String("method", c.Request.Method), zap.String("url", c.Request.URL.Path))
 
 	var requestPayload model.Receipt
+
+	if err := validator.ValidateReceipt(requestPayload); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
 
 	if err := c.ShouldBindJSON(&requestPayload); err != nil {
 		utils.Logger.Error("Invalid JSON format", zap.Error(err))

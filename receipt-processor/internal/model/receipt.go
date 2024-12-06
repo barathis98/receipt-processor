@@ -1,6 +1,10 @@
 package model
 
 import (
+	"encoding/json"
+	"fmt"
+	"strconv"
+
 	"github.com/google/uuid"
 )
 
@@ -11,6 +15,31 @@ type Receipt struct {
 	PurchaseTime string  `json:"purchaseTime" binding:"required"`
 	Items        []Item  `json:"items" binding:"required"`
 	Total        float64 `json:"total" binding:"required"`
+}
+
+func (t *Receipt) UnmarshalJSON(data []byte) error {
+	type Alias Receipt
+	aux := &struct {
+		Total string `json:"total"`
+		*Alias
+	}{
+		Alias: (*Alias)(t),
+	}
+
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+
+	if aux.Total != "" {
+		strValue := aux.Total
+		if floatValue, err := strconv.ParseFloat(strValue, 64); err == nil {
+			t.Total = floatValue
+		} else {
+			return fmt.Errorf("invalid total value")
+		}
+	}
+
+	return nil
 }
 
 func NewReceipt(retailer string, purchaseDate string, purchaseTime string, items []Item, total float64) *Receipt {

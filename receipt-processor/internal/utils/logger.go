@@ -14,6 +14,12 @@ var (
 )
 
 func InitLogger() {
+
+	if os.Getenv("ENV") == "test" {
+		// Use a no-op logger if it's a test
+		Logger = zap.NewNop()
+		return
+	}
 	// Create a log file or open an existing one
 	if _, err := os.Stat("log"); os.IsNotExist(err) {
 		err := os.Mkdir("log", 0755)
