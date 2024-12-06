@@ -53,7 +53,7 @@ Now that Go is installed, you can proceed with installing the project:
 2. Clone the repository:
    ```
    git clone https://github.com/barathis98/receipt-processor.git
-   cd receipt-processor/receipt-processor
+   cd receipt-processor/
    ```
 
 3. Install dependencies:
